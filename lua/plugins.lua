@@ -3,22 +3,26 @@ packer.startup({
   function(use)
    -- Packer 可以管理自己本身
    use 'wbthomason/packer.nvim'
-   --------------------- colorschemes --------------------
-    -- tokyonight
+   --------------------- colorschemes ---------------------
+    -- tokyonight 主题
     use("folke/tokyonight.nvim")
     -------------------------------------------------------
    --------------------- plugins --------------------------
-    -- nvim-tree
+    -- nvim-tree 左侧文件树插件
     use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
-    -- bufferline
+    -- bufferline 顶部标签页插件
     use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
-    -- lualine
+    -- lualine 底部信息栏插件
     use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
     use("arkav/lualine-lsp-progress")
-    -- telescope
+    -- telescope 模糊搜索插件
     use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
-    -- telescope extensions
+    -- telescope extensions 可以列出环境变量
     use "LinArcX/telescope-env.nvim"
+    -- dashboard-nvim 启动页插件
+    use({"glepnir/dashboard-nvim", commit = "a36b3232c98616149784f2ca2654e77caea7a522"})
+    -- telescope project 插件
+    use("ahmedkhalf/project.nvim")
     -------------------------------------------------------
   end,
   config = {

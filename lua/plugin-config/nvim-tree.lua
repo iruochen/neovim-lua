@@ -12,6 +12,7 @@ nvim_tree.setup({
     enable = false,
   },
   -- project plugin 需要这样设置
+  -- 让 nvim-tree 支持切换目录
   update_cwd = true,
   update_focused_file = {
     enable = true,
