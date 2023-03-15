@@ -1,13 +1,13 @@
 local packer = require("packer")
 packer.startup({
   function(use)
-   -- Packer 可以管理自己本身
-   use 'wbthomason/packer.nvim'
-   --------------------- colorschemes ---------------------
+    -- Packer 可以管理自己本身
+    use 'wbthomason/packer.nvim'
+    --------------------- colorschemes ---------------------
     -- tokyonight 主题
     use("folke/tokyonight.nvim")
-    -------------------------------------------------------
-   --------------------- plugins --------------------------
+    --------------------------------------------------------
+    --------------------- plugins --------------------------
     -- nvim-tree 左侧文件树插件
     use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
     -- bufferline 顶部标签页插件
@@ -20,9 +20,20 @@ packer.startup({
     -- telescope extensions 可以列出环境变量
     use "LinArcX/telescope-env.nvim"
     -- dashboard-nvim 启动页插件
-    use({"glepnir/dashboard-nvim", commit = "a36b3232c98616149784f2ca2654e77caea7a522"})
+    use {
+      'glepnir/dashboard-nvim',
+      event = 'VimEnter',
+      config = function()
+        require('dashboard').setup {
+          -- config
+        }
+      end,
+      requires = {'nvim-tree/nvim-web-devicons'}
+    }
     -- telescope project 插件
     use("ahmedkhalf/project.nvim")
+    -- treesitter 语法高亮插件
+    -- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
     -------------------------------------------------------
   end,
   config = {
