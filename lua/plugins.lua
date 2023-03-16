@@ -33,7 +33,7 @@ packer.startup({
     -- telescope project 插件
     use("ahmedkhalf/project.nvim")
     -- treesitter 语法高亮插件
-    -- use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use({ "nvim-treesitter/nvim-treesitter" })
     -------------------------------------------------------
   end,
   config = {

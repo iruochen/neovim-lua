@@ -19,4 +19,6 @@ require("plugin-config.telescope")
 require("plugin-config.dashboard")
 -- telescope project 扩展插件
 require("plugin-config.project")
+-- 高亮插件
+require("plugin-config.nvim-treesitter")
 ------------ ------------------------------
