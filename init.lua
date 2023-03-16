@@ -21,4 +21,6 @@ require("plugin-config.dashboard")
 require("plugin-config.project")
 -- 高亮插件
 require("plugin-config.nvim-treesitter")
+-- LSP 
+require("lsp.setup")
 ------------ ------------------------------

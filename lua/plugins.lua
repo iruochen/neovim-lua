@@ -34,6 +34,11 @@ packer.startup({
     use("ahmedkhalf/project.nvim")
     -- treesitter 语法高亮插件
     use({ "nvim-treesitter/nvim-treesitter" })
+    -- LSP
+    use({ "williamboman/mason.nvim" })
+    use({ "williamboman/mason-lspconfig.nvim" })
+    -- Lspconfig
+    use({ "neovim/nvim-lspconfig" })
     -------------------------------------------------------
   end,
   config = {
