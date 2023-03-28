@@ -25,4 +25,8 @@ require("plugin-config.nvim-treesitter")
 require("lsp.setup")
 -- LSP 代码补全
 require("lsp.cmp")
+-- LSP 错误提示
+require("lsp.ui")
+-- 括号匹配
+require("plugin-config.indent-blankline")
 ------------ ------------------------------
