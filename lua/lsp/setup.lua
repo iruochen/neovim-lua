@@ -17,7 +17,7 @@ if not status then
 end
 
 -- :h mason-default-settings
-require("mason").setup({
+mason.setup({
   ui = {
     icons = {
       package_installed = "✓",
@@ -29,10 +29,10 @@ require("mason").setup({
 
 -- mason-lspconfig uses the `lspconfig` server names in the APIs it exposes - not `mason.nvim` package names
 -- https://github.com/williamboman/mason-lspconfig.nvim/blob/main/doc/server-mapping.md
-require("mason-lspconfig").setup({
+mason_config.setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
-    "sumneko_lua",
+    -- "lua_ls",
   },
 })
 
@@ -41,7 +41,7 @@ require("mason-lspconfig").setup({
 -- key 必须为下列网址列出的名称
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
-  sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
+  -- sumneko_lua = require("lsp.config.lua"), -- lua/lsp/config/lua.lua
 }
 
 for name, config in pairs(servers) do
