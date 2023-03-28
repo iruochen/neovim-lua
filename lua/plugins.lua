@@ -57,6 +57,8 @@ packer.startup({
     -- indent-blankline(括号对齐线)
     use("lukas-reineke/indent-blankline.nvim")
     use("tami5/lspsaga.nvim" )
+    -- 代码格式化
+    use("mhartington/formatter.nvim")
     -------------------------------------------------------
   end,
   config = {
