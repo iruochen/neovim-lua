@@ -1,7 +1,7 @@
 -- utf8
 vim.g.encoding = "UTF-8"
 vim.o.fileencoding = "utf-8"
--- 光标移动是光标周围保留8行
+-- 光标移动时光标周围保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
 -- 使用相对行号
