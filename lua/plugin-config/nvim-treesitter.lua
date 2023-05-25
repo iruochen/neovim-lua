@@ -23,6 +23,10 @@ treesitter.setup({
       scope_incremental = "<TAB>",
     },
   },
+  -- 启用代码缩进模块 (=)
+  indent = {
+    enable = true,
+  },
 })
 -- 开启 Folding 模块
 -- zc 折叠代码 zo 展开代码

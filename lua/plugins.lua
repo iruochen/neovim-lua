@@ -49,7 +49,6 @@ packer.startup({
         use('hrsh7th/cmp-buffer') -- { name = 'buffer' },
         use('hrsh7th/cmp-path') -- { name = 'path' }
         use('hrsh7th/cmp-cmdline') -- { name = 'cmdline' }
-
         -- 常见编程语言代码段
         use('rafamadriz/friendly-snippets')
         -- ui
@@ -70,3 +69,16 @@ packer.startup({
         },
     },
 })
+
+-- 每次保存 plugins.lua 自动安装插件
+--[=[
+pcall(
+  vim.cmd,
+  [[
+    augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+    augroup end
+  ]]
+)
+]=]

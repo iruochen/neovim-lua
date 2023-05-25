@@ -18,6 +18,12 @@ map('v', '<C-y>', '"+y', opt)
 map('n', '<C-y>', '"+y', opt)
 -- 支持在normal模式下，通过C-p复制到系统剪切板
 map('n', '<C-p>', '"*p', opt)
+-- 上下滚动浏览
+map("n", "<C-j>", "4j", opt)
+map("n", "<C-k>", "4k", opt)
+-- ctrl u / ctrl + d  只移动9行，默认移动半屏
+map("n", "<C-u>", "9k", opt)
+map("n", "<C-d>", "9j", opt)
 -- 分屏快捷键
 -- 向右分屏
 map('n', 'sl', ':set splitright<CR>:vsplit<CR>', opt)
