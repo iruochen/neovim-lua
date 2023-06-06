@@ -58,6 +58,11 @@ packer.startup({
         use('tami5/lspsaga.nvim')
         -- 代码格式化
         use('mhartington/formatter.nvim')
+        -- neoai
+        use({
+            'Bryley/neoai.nvim',
+            require = { 'MunifTanjim/nui.nvim' },
+        })
         -------------------------------------------------------
     end,
     config = {
