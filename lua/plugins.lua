@@ -60,8 +60,15 @@ packer.startup({
         use('mhartington/formatter.nvim')
         -- neoai
         use({
-            'Bryley/neoai.nvim',
+            'iruochen/neoai.nvim',
             requires = { 'MunifTanjim/nui.nvim' },
+        })
+        -- markdown preview
+        use({
+            'iamcco/markdown-preview.nvim',
+            run = function()
+                vim.fn['mkdp#util#install']()
+            end,
         })
         -------------------------------------------------------
     end,

@@ -39,6 +39,8 @@ neoai.setup({
         ['select_down'] = '<C-j>',
     },
     open_api_key_env = 'OPENAI_API_KEY',
+    -- proxy url
+    open_api_url = 'https://openai.ruochen.net.cn/v1/chat/completions',
     shortcuts = {
         {
             name = 'textify',

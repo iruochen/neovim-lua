@@ -147,6 +147,11 @@ _G.packer_plugins = {
     path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -156,6 +161,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["neoai.nvim"] = {
+    loaded = true,
+    path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/neoai.nvim",
+    url = "https://github.com/Bryley/neoai.nvim"
+  },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
