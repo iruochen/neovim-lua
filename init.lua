@@ -31,4 +31,6 @@ require('lsp.ui')
 require('plugin-config.indent-blankline')
 -- 格式化代码
 require('lsp.formatter')
+-- neoai
+require('plugin-config.neoai')
 ------------ ------------------------------
