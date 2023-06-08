@@ -61,7 +61,7 @@ packer.startup({
         -- neoai
         use({
             'Bryley/neoai.nvim',
-            require = { 'MunifTanjim/nui.nvim' },
+            requires = { 'MunifTanjim/nui.nvim' },
         })
         -------------------------------------------------------
     end,
