@@ -157,11 +157,6 @@ _G.packer_plugins = {
     path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
-  ["neoai.nvim"] = {
-    loaded = true,
-    path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/neoai.nvim",
-    url = "https://github.com/Bryley/neoai.nvim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/ruochen/.local/share/nvim/site/pack/packer/start/nvim-cmp",

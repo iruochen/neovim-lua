@@ -38,7 +38,7 @@ neoai.setup({
         ['select_up'] = '<C-k>',
         ['select_down'] = '<C-j>',
     },
-    open_api_key_env = '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',
+    open_api_key_env = 'OPENAI_API_KEY',
     shortcuts = {
         {
             name = 'textify',
