@@ -33,4 +33,6 @@ require('plugin-config.indent-blankline')
 require('lsp.formatter')
 -- neoai
 require('plugin-config.neoai')
+-- autopairs
+require('plugin-config.nvim-autopairs')
 ------------ ------------------------------

@@ -70,6 +70,12 @@ packer.startup({
                 vim.fn['mkdp#util#install']()
             end,
         })
+        use({
+            'windwp/nvim-autopairs',
+            config = function()
+                require('nvim-autopairs').setup({})
+            end,
+        })
         -------------------------------------------------------
     end,
     config = {
