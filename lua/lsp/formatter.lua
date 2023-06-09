@@ -1,6 +1,6 @@
-local status, formatter = pcall(require, "formatter")
+local status, formatter = pcall(require, 'formatter')
 if not status then
-  vim.notify("没有找到 formatter")
+  vim.notify('没有找到 formatter')
   return
 end
 
@@ -9,17 +9,17 @@ formatter.setup({
     lua = {
       function()
         return {
-          exe = "stylua",
+          exe = 'stylua',
           args = {
             -- "--config-path "
             --   .. os.getenv("XDG_CONFIG_HOME")
             --   .. "/stylua/stylua.toml",
-            "-",
+            '-',
           },
           stdin = true,
         }
       end,
-    }
+    },
   },
 })
 
