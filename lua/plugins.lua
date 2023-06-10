@@ -45,6 +45,8 @@ packer.startup({
     use('hrsh7th/cmp-cmdline') -- { name = 'cmdline' }
     -- 常见编程语言代码段
     use('rafamadriz/friendly-snippets')
+    -- Lua 增强
+    use('folke/neodev.nvim')
     -- ui
     use('onsails/lspkind-nvim')
     -- indent-blankline(括号对齐线)
@@ -64,6 +66,7 @@ packer.startup({
         vim.fn['mkdp#util#install']()
       end,
     })
+    -- 括号自动补全
     use({
       'windwp/nvim-autopairs',
       config = function()
