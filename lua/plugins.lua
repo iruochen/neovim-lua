@@ -22,12 +22,6 @@ packer.startup({
     -- dashboard-nvim 启动页插件
     use({
       'glepnir/dashboard-nvim',
-      event = 'VimEnter',
-      config = function()
-        require('dashboard').setup({
-          -- config
-        })
-      end,
       requires = { 'nvim-tree/nvim-web-devicons' },
     })
     -- telescope project 插件

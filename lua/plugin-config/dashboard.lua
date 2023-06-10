@@ -7,11 +7,20 @@ end
 db.setup({
   theme = 'hyper',
   config = {
-    week_header = {
-      enable = true,
+    header = {
+      'hello world',
     },
+    week_header = {
+      -- append = true,
+    },
+    center = {},
     shortcut = {
-      { desc = ' Update', group = '@property', action = 'Lazy update', key = 'u' },
+      {
+        desc = '󰊳 init.lua',
+        group = '@property',
+        action = 'edit ~/.config/nvim/init.lua',
+        key = 'e',
+      },
       {
         icon = ' ',
         icon_hl = '@variable',
@@ -21,16 +30,16 @@ db.setup({
         key = 'f',
       },
       {
-        desc = ' Apps',
+        desc = ' Projects',
         group = 'DiagnosticHint',
-        action = 'Telescope app',
-        key = 'a',
+        action = 'Telescope projects',
+        key = 'p',
       },
       {
-        desc = ' dotfiles',
+        desc = ' Oldfiles',
         group = 'Number',
-        action = 'Telescope dotfiles',
-        key = 'd',
+        action = 'Telescope oldfiles',
+        key = 'o',
       },
     },
   },
