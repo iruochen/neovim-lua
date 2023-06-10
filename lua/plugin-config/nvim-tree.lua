@@ -5,8 +5,10 @@ if not status then
 end
 
 -- 列表操作快捷键
-local list_keys = require('keybindings').nvimTreeList
+-- local list_keys = require('keybindings').nvimTreeList
+local nvim_tree_on_attach = require('keybindings').nvim_tree_on_attach
 nvim_tree.setup({
+  on_attach = nvim_tree_on_attach,
   -- 不显示git状态图标
   git = {
     enable = false,
@@ -31,10 +33,12 @@ nvim_tree.setup({
     -- 隐藏根目录
     hide_root_folder = false,
     -- 自定义列表中快捷键
+    --[[
     mappings = {
       custom_only = false,
       list = list_keys,
     },
+    ]]
     -- 不显示行数
     number = false,
     relativenumber = false,

@@ -85,6 +85,7 @@ pluginKeys.telescopeList = {
 }
 ------------------ ------------------------------------
 ----------------- nvim-tree 列表快捷键-----------------
+--[[
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件夹
   { key = { '<CR>', 'o', '<2-LeftMouse>' }, action = 'edit' },
@@ -104,6 +105,32 @@ pluginKeys.nvimTreeList = {
   { key = 'p', action = 'paste' },
   { key = 's', action = 'system_open' },
 }
+]]
+pluginKeys.nvim_tree_on_attach = function(bufnr)
+  local api = require('nvim-tree.api')
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- 打开文件或文件夹
+  vim.keymap.set('n', '<CR>', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
+  vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
+  -- 分屏打开文件
+  vim.keymap.set('n', '<2-LeftMouse>', api.node.open.edit, opts('Open'))
+  -- 显示隐藏文件
+  vim.keymap.set('n', '.', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
+  -- 刷新
+  vim.keymap.set('n', 'R', api.tree.reload, opts('Refresh'))
+  vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
+  vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
+  vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
+  vim.keymap.set('n', 'x', api.fs.cut, opts('Cut'))
+  vim.keymap.set('n', 'c', api.fs.copy.node, opts('Copy'))
+  vim.keymap.set('n', 'p', api.fs.paste, opts('Paste'))
+  vim.keymap.set('n', 's', api.node.run.system, opts('Run System'))
+end
+
 -------------------------------------------------------
 ---------------- LSP 回调函数快捷键设置----------------
 pluginKeys.mapLSP = function(mapbuf)
