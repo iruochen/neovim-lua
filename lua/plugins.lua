@@ -101,6 +101,13 @@ packer.startup({
         require('plugin-config.neoai')
       end,
     })
+    -- 代码注释
+    use({
+      'numToStr/Comment.nvim',
+      config = function()
+        require('plugin-config.comment')
+      end,
+    })
     ------------------------LSP----------------------------
     -- installer
     use({ 'williamboman/mason.nvim' })
@@ -112,7 +119,7 @@ packer.startup({
     -- Snippet 引擎
     use('L3MON4D3/LuaSnip')
     use('saadparwaiz1/cmp_luasnip')
-    use("hrsh7th/vim-vsnip")
+    use('hrsh7th/vim-vsnip')
     -- 补全源
     use('hrsh7th/cmp-vsnip')
     use('hrsh7th/cmp-nvim-lsp') -- { name = nvim_lsp }

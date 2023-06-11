@@ -17,6 +17,8 @@ treesitter.setup({
     'typescript',
     'tsx',
     'markdown',
+    'vue',
+    'scss',
   },
   -- 启用代码高亮模块
   highlight = {

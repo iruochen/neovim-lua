@@ -35,6 +35,9 @@ mason_config.setup({
   ensure_installed = {
     'lua_ls',
     'html',
+    'cssls',
+    'emmet_ls',
+    'jsonls',
   },
 })
 
@@ -45,6 +48,9 @@ mason_config.setup({
 local servers = {
   lua_ls = require('lsp.config.lua'), -- lua/lsp/config/lua.lua
   html = require('lsp.config.html'),
+  cssls = require('lsp.config.css'),
+  emmet_ls = require('lsp.config.emmet'),
+  jsonls = require('lsp.config.json'),
 }
 
 for name, config in pairs(servers) do

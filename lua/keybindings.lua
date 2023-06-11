@@ -172,9 +172,9 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf('n', 'gj', '<cmd>Lspsaga diagnostic_jump_next<cr>', opt)
   mapbuf('n', 'gk', '<cmd>Lspsaga diagnostic_jump_prev<cr>', opt)
   if vim.fn.has('nvim-0.8') == 1 then
-    mapbuf('n', lsp.format, '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
+    mapbuf('n', '<C-,>', '<cmd>lua vim.lsp.buf.format({ async = true })<CR>')
   else
-    mapbuf('n', lsp.format, '<cmd>lua vim.lsp.buf.formatting()<CR>')
+    mapbuf('n', '<C-,>', '<cmd>lua vim.lsp.buf.formatting()<CR>')
   end
   -- 未用
   -- mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
