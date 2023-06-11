@@ -13,6 +13,13 @@ packer.startup({
     })
     --------------------------------------------------------
     --------------------- plugins --------------------------
+    -- nvim-notify
+    use({
+      'rcarriga/nvim-notify',
+      config = function()
+        require('plugin-config.nvim-notify')
+      end,
+    })
     -- nvim-tree 左侧文件树插件
     use({
       'kyazdani42/nvim-tree.lua',
