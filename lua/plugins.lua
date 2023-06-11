@@ -37,7 +37,7 @@ packer.startup({
         require('plugin-config.lualine')
       end,
     })
-    use('arkav/lualine-lsp-progress')
+    -- use('arkav/lualine-lsp-progress')
     -- telescope 模糊搜索插件
     use({
       'nvim-telescope/telescope.nvim',
@@ -83,7 +83,7 @@ packer.startup({
     use({
       'windwp/nvim-autopairs',
       config = function()
-        require('nvim-autopairs').setup({})
+        require('plugin-config.nvim-autopairs')
       end,
     })
     -- markdown preview
@@ -109,8 +109,10 @@ packer.startup({
     use({ 'neovim/nvim-lspconfig' })
     -- 补全引擎
     use('hrsh7th/nvim-cmp')
-    -- snippet 引擎
-    use('hrsh7th/vim-vsnip')
+    -- Snippet 引擎
+    use('L3MON4D3/LuaSnip')
+    use('saadparwaiz1/cmp_luasnip')
+    use("hrsh7th/vim-vsnip")
     -- 补全源
     use('hrsh7th/cmp-vsnip')
     use('hrsh7th/cmp-nvim-lsp') -- { name = nvim_lsp }

@@ -1,5 +1,7 @@
-local cmp = require('cmp')
-
+local status, cmp = pcall(require, 'cmp')
+if not status then
+  return
+end
 cmp.setup({
   -- 指定 snippet 引擎
   snippet = {
@@ -16,27 +18,46 @@ cmp.setup({
       -- For `snippy` users.
       -- require'snippy'.expand_snippet(args.body)
     end,
+    -- 指定 snippet 引擎 luasnip
+    --[[
+    snippet = {
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end,
+    },
+    ]]
+    window = {
+      completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
   },
   -- 补全源
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    -- For vsnip users.
-    { name = 'vsnip' },
-
-    -- For luasnip users.
-    -- { name = 'luasnip' },
-
-    --For ultisnips users.
-    -- { name = 'ultisnips' },
-
-    -- -- For snippy users.
-    -- { name = 'snippy' },
-  }, { { name = 'buffer' }, { name = 'path' } }),
-
+    {
+      name = 'luasnip',
+      group_index = 1,
+    },
+    {
+      name = 'nvim_lsp',
+      group_index = 1,
+    },
+    {
+      name = 'nvim_lsp_signature_help',
+      group_index = 1,
+    },
+    {
+      name = 'buffer',
+      group_index = 2,
+    },
+    {
+      name = 'path',
+      group_index = 2,
+    },
+  }),
   -- 快捷键设置
   mapping = require('keybindings').cmp(cmp),
   -- 使用lspkind-nvim显示类型图标
-  formatting = require('lsp.ui').formatting,
+  formatting = require('cmp.lspkind').formatting,
 })
 
 -- / 查找模式使用 buffer 源

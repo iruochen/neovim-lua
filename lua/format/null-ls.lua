@@ -1,6 +1,6 @@
-local status, null_ls = pcall(require, "null-ls")
+local status, null_ls = pcall(require, 'null-ls')
 if not status then
-  vim.notify("没有找到 null-ls")
+  vim.notify('没有找到 null-ls')
   return
 end
 
@@ -19,22 +19,22 @@ null_ls.setup({
     -- frontend
     formatting.prettier.with({ -- 比默认少了 markdown
       filetypes = {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-        "vue",
-        "css",
-        "scss",
-        "less",
-        "html",
-        "json",
-        "yaml",
-        "graphql",
-        "markdown",
+        'javascript',
+        'javascriptreact',
+        'typescript',
+        'typescriptreact',
+        'vue',
+        'css',
+        'scss',
+        'less',
+        'html',
+        'json',
+        'yaml',
+        'graphql',
+        'markdown',
       },
       timeout = 10000,
-      prefer_local = "node_modules/.bin",
+      prefer_local = 'node_modules/.bin',
     }),
     -- rustfmt
     -- rustup component add rustfmt
@@ -42,7 +42,7 @@ null_ls.setup({
     -- Python
     -- pip install black
     -- asdf reshim python
-    formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.black.with({ extra_args = { '--fast' } }),
     -----------------------------------------------------
     -- Ruby
     -- gem install rubocop
@@ -60,7 +60,7 @@ null_ls.setup({
     -- }),
     -- npm install -g eslint_d
     diagnostics.eslint_d.with({
-      prefer_local = "node_modules/.bin",
+      prefer_local = 'node_modules/.bin',
     }),
     -- diagnostics.markdownlint,
     -- markdownlint-cli2
@@ -81,7 +81,7 @@ null_ls.setup({
   -- #{m}: message
   -- #{s}: source name (defaults to null-ls if not specified)
   -- #{c}: code (if available)
-  diagnostics_format = "[#{s}] #{m}",
+  diagnostics_format = '[#{s}] #{m}',
   on_attach = function(_)
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()']])
     -- if client.resolved_capabilities.document_formatting then

@@ -25,6 +25,7 @@ ident_blankline.setup({
   },
   -- :echo &filetype
   filetype_exclude = {
+    'null-ls-info',
     'dashboard',
     'packer',
     'terminal',
@@ -35,6 +36,7 @@ ident_blankline.setup({
     'lsp-installer',
     'lspinfo',
     'toggleterm',
+    'text',
   },
   -- 竖线样式
   -- char = '¦'

@@ -34,6 +34,7 @@ mason_config.setup({
   -- 确保安装，根据需要填写
   ensure_installed = {
     'lua_ls',
+    'html',
   },
 })
 
@@ -42,7 +43,8 @@ mason_config.setup({
 -- key 必须为下列网址列出的名称
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
-  sumneko_lua = require('lsp.config.lua'), -- lua/lsp/config/lua.lua
+  lua_ls = require('lsp.config.lua'), -- lua/lsp/config/lua.lua
+  html = require('lsp.config.html'),
 }
 
 for name, config in pairs(servers) do

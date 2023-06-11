@@ -6,13 +6,21 @@ if not status then
 end
 lualine.setup({
   options = {
+    -- 指定皮肤
     theme = 'tokyonight',
-    component_separators = { left = '|', right = '|' },
+    component_separators = {
+      left = '|',
+      right = '|',
+    },
     -- https://github.com/ryanoasis/powerline-extra-symbols
-    section_separators = { left = ' ', right = '' },
+    section_separators = {
+      left = ' ',
+      right = '',
+    },
   },
-  extensions = { 'nvim-tree', 'toggleterm' },
+  extensions = { 'nvim-tree' },
   sections = {
+    --[[
     lualine_c = {
       'filename',
       {
@@ -20,6 +28,7 @@ lualine.setup({
         spinner_symbols = { ' ', ' ', ' ', ' ', ' ', ' ' },
       },
     },
+    ]]
     lualine_x = {
       'filesize',
       {
