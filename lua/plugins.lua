@@ -161,6 +161,27 @@ packer.startup({
     })
   end,
   config = {
+    -- 锁定插件版本在snapshots目录
+    snapshot_path = require('packer.util').join_paths(vim.fn.stdpath('config'), 'snapshots'),
+    -- 这里锁定插件版本在v1，不会继续更新插件
+    -- snapshot = require('packer.util').join_paths(vim.fn.stdpath('config'), 'snapshots') .. '/v1',
+    -- snapshot = "v1",
+
+    -- 最大并发数
+    max_jobs = 10,
+    -- 自定义源
+    git = {
+      -- default_url_format = "https://hub.fastgit.xyz/%s",
+      -- default_url_format = "https://mirror.ghproxy.com/https://github.com/%s",
+      -- default_url_format = "https://gitcode.net/mirrors/%s",
+      -- default_url_format = "https://gitclone.com/github.com/%s",
+    },
+    -- display = {
+    -- 使用浮动窗口显示
+    --   open_fn = function()
+    --     return require("packer.util").float({ border = "single" })
+    --   end,
+    -- },
     -- 以浮动窗口打开安装列表
     display = {
       open_fn = function()

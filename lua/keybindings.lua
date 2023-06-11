@@ -84,7 +84,26 @@ pluginKeys.telescopeList = {
   },
 }
 ------------------ ------------------------------------
------------------ nvim-tree 列表快捷键-----------------
+
+----------------- comment 代码注释插件 ----------------
+pluginKeys.comment = {
+  -- Normal 模式快捷键
+  toggler = {
+    line = 'gcc', -- 行注释
+    block = 'gbc', -- 块注释
+  },
+  -- Visual 模式
+  opleader = {
+    line = 'gc',
+    bock = 'gb',
+  },
+}
+-- ctrl + /
+map('n', '<C-/>', 'gcc', { noremap = false })
+map('v', '<C-/>', 'gb', { noremap = false })
+-------------------------------------------------------
+
+----------------- nvim-tree 列表快捷键 ----------------
 --[[
 pluginKeys.nvimTreeList = {
   -- 打开文件或文件夹

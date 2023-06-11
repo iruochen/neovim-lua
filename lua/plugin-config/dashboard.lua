@@ -7,6 +7,8 @@ end
 db.setup({
   theme = 'doom',
   config = {
+    -- ascii 图片生成网站
+    -- http://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=neovim
     header = {
       [[]],
       [[]],
