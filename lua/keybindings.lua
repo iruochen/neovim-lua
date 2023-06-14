@@ -65,6 +65,11 @@ map('n', '<leader>p', ':Telescope find_files<CR>', opt)
 map('n', '<leader>f', ':Telescope live_grep<CR>', opt)
 
 ------------------ ------------------------------------
+---------------------- NeoAI --------------------------
+-- normal模式
+map('n', 'ai', ':NeoAI<CR>', opt)
+------------------ ------------------------------------
+
 ------------- Telescope 列表插入模式快捷键-------------
 pluginKeys.telescopeList = {
   i = {
