@@ -22,6 +22,7 @@ map('n', '<C-p>', '"*p', opt)
 map('n', '<C-j>', '4j', opt)
 map('n', '<C-k>', '4k', opt)
 -- ctrl u / ctrl + d  只移动9行，默认移动半屏
+-- ctrl+u / ctrl+d 是一对，ctrl+f / ctrl+b 是一对
 map('n', '<C-u>', '9k', opt)
 map('n', '<C-d>', '9j', opt)
 -- 分屏快捷键
@@ -40,6 +41,23 @@ map('n', '<LEADER>h', '<C-w>h', opt)
 map('n', '<LEADER>j', '<C-w>j', opt)
 -- Leader CR 取消高亮
 map('n', '<LEADER><CR>', ':nohlsearch', opt)
+-- 映射L和H到行尾和行首
+map('n', 'L', '$', opt)
+map('n', 'H', '^', opt)
+map('v', 'L', '$', opt)
+map('v', 'H', '^', opt)
+-- 映射;到:
+map('n', ';', ':', opt)
+-- insert 模式下光标移动
+map('i', '<C-h>', '<Left>', opt)
+map('i', '<C-l>', '<Right>', opt)
+map('i', '<C-j>', '<Down>', opt)
+map('i', '<C-k>', '<Up>', opt)
+map('i', '<C-a>', '<Home>', opt)
+map('i', '<C-e>', '<End>', opt)
+map('i', '<C-d>', '<Delete>', opt)
+-- jj 回到 normal 模式
+map('i', 'jj', '<Esc>', opt)
 
 -- 插件快捷键
 local pluginKeys = {}
