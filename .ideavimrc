@@ -1,0 +1,4 @@
+source ./init.vim
+map th :tabp<CR>
+map tl :tabn<CR>
+set relativenumber

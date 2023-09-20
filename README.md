@@ -1,1 +1,1 @@
-- neovim lua config
+- idea vim config
