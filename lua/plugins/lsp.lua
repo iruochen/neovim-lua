@@ -37,7 +37,7 @@ return {
             nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
             nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
             nmap('gi', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-            nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+            -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
             nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[W]orkspace [A]dd Folder')
             nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[W]orkspace [R]emove Folder')
             nmap('<leader>wl', function()
