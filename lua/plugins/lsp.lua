@@ -14,14 +14,10 @@ return {
       },
       pyright = {},
       jsonls = {},
-      marksman = {},
       volar = {},
       dockerls = {},
       docker_compose_language_service = {},
       bashls = {},
-      ocamllsp = {},
-      taplo = {},
-      ruff_lsp = {},
     }
     local on_attach = function(_, bufnr)
       -- Enable completion triggered by <c-x><c-o>
