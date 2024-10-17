@@ -57,6 +57,13 @@ map <LEADER>j <C-w>j
 " `^: 光标回到上一次编辑的位置
 inoremap jj <Esc>`^
 
+" tab
 map th :tabp<CR>
 map tl :tabn<CR>
 set relativenumber
+
+" plugin
+" nerdtree
+set NERDTree
+" 快速打开目录树
+nnoremap tt <Esc>:NERDTreeToggle<CR>
