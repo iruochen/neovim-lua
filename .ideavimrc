@@ -1,4 +1,62 @@
-source ./init.vim
+" 将leader键设置为空格
+let mapleader=" "
+" 自动换行
+set wrap
+" 显示命令
+set showcmd
+" 命令提示
+set wildmenu
+" 搜索高亮
+set hlsearch
+" 输入时高亮
+set incsearch
+" 打开新文件时去除高亮
+exec "nohlsearch"
+" 忽略大小写
+set ignorecase
+" 智能大小写
+set smartcase
+
+""""""""""""" 按键映射
+" 搜索结果显示到中间
+noremap n nzz
+noremap N Nzz
+" 使用空格加回车取消显示搜索结果
+noremap <LEADER><CR> :nohlsearch<CR>
+
+" 粘贴
+" 支持在Visual模式下，通过C-y复制到系统剪切板
+vnoremap <C-y> "+y
+" 支持在normal模式下，通过C-p粘贴系统剪切板
+nnoremap <C-p> "*p
+" 支持在normal模式下，通过C-p粘贴系统剪切板
+nnoremap <C-y> "+y
+map <C-j> 4j
+map <C-k> 4k
+map s <nop>
+" S 保存
+map S :w<CR>
+" Q 退出
+map Q :q<CR>
+" 向右分屏
+map sl :set splitright<CR>:vsplit<CR>
+" 向左分屏
+map sh :set nosplitright<CR>:vsplit<CR>
+" 向上分屏
+map sk :set nosplitbelow<CR>:split<CR>
+" 向下分屏
+map sj :set splitbelow<CR>:split<CR>
+" 分屏间移动映射
+map <LEADER>l <C-w>l
+map <LEADER>k <C-w>k
+map <LEADER>h <C-w>h
+map <LEADER>j <C-w>j
+" insert 模式映射<Leader>w 保存文件
+" inoremap <leader>s <Esc>:w<cr>
+" jj 映射到esc
+" `^: 光标回到上一次编辑的位置
+inoremap jj <Esc>`^
+
 map th :tabp<CR>
 map tl :tabn<CR>
 set relativenumber
