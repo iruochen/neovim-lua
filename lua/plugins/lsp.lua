@@ -28,6 +28,13 @@ return {
 
         vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
       end
+      local vmap = function(keys, func, desc)
+        if desc then
+          desc = 'LSP: ' .. desc
+        end
+
+        vim.keymap.set('v', keys, func, { buffer = bufnr, desc = desc })
+      end
 
       nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
       nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
@@ -44,7 +51,7 @@ return {
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
       -- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
       nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
-      nmap("<space>f", function()
+      vmap("=", function()
         vim.lsp.buf.format { async = true }
       end, "[F]ormat code")
     end
