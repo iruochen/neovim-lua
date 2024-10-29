@@ -6,11 +6,11 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   config = function()
-    local on_attach = function()
-      local api = require "nvim-tree.api"
-      vim.keymap.set('n', 'tt', ':NvimTreeToggle<CR>', opts('Up'))
-    end
-    require("nvim-tree").setup {
-    }
+    require("nvim-tree").setup({
+      view = {
+        width = 30
+      }
+    })
+    vim.api.nvim_set_keymap('n', 'tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
   end,
 }
