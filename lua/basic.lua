@@ -1,5 +1,6 @@
 -- utf8
 vim.g.encoding = 'UTF-8'
+vim.opt.exrc = true
 vim.o.fileencoding = 'utf-8'
 -- 光标移动时光标周围保留8行
 vim.o.scrolloff = 8

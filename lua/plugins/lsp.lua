@@ -1,12 +1,16 @@
 return {
+  -- 用于配置lsp, 可以在项目lua/lspconfig/configs下看到大量配置文件
   "neovim/nvim-lspconfig",
   dependencies = {
+    -- 用于安装lsp
     "williamboman/mason.nvim",
+    -- 快捷配置lsp
     "williamboman/mason-lspconfig",
   },
   config = function()
     local servers = {
       lua_ls = {
+        -- ls特殊配置
         Lua = {
           workspace = { checkThirdParty = false },
           telemetry = { enable = false },
@@ -49,8 +53,8 @@ return {
       nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-      -- nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-      nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
+      nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+      -- nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
       vmap("=", function()
         vim.lsp.buf.format { async = true }
       end, "[F]ormat code")
@@ -59,7 +63,7 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = vim.tbl_keys(servers),
       handlers = {
-        function(server_name)         -- default handler (optional)
+        function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup {
             settings = servers[server_name],
             on_attach = on_attach,
