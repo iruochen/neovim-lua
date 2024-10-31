@@ -1,3 +1,4 @@
+-- 参考配置：https://github.com/FledgeXu/NeovimZero2Hero/blob/main/lua/plugins/lsp.lua
 return {
   -- 用于配置lsp, 可以在项目lua/lspconfig/configs下看到大量配置文件
   "neovim/nvim-lspconfig",
@@ -6,15 +7,23 @@ return {
     "williamboman/mason.nvim",
     -- 快捷配置lsp
     "williamboman/mason-lspconfig",
+    -- 识别全局变量 vim
+    "folke/neodev.nvim",
+    -- 右下角显示lsp进度
+    "j-hui/fidget.nvim",
+    -- lsp ui美化
+    -- "nvimdev/lspsaga.nvim",
   },
   config = function()
     local servers = {
       lua_ls = {
-        -- ls特殊配置
-        Lua = {
-          workspace = { checkThirdParty = false },
-          telemetry = { enable = false },
-        },
+        settings = {
+          -- ls特殊配置
+          Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+          },
+        }
       },
       pyright = {},
       jsonls = {},
@@ -53,23 +62,29 @@ return {
       nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
       nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
       nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+      nmap('<leader>da', require "telescope.builtin".diagnostics, '[D]i[A]gnostics')
       nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
       -- nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
       vmap("=", function()
         vim.lsp.buf.format { async = true }
       end, "[F]ormat code")
     end
+    require("neodev").setup()
+    require("fidget").setup({})
+    -- require("lspsaga").setup()
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = vim.tbl_keys(servers),
-      handlers = {
-        function(server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup {
-            settings = servers[server_name],
-            on_attach = on_attach,
-          }
-        end,
-      }
     })
+    for server, config in pairs(servers) do
+      require("lspconfig")[server].setup(
+        vim.tbl_deep_extend("keep",
+          {
+            on_attach = on_attach
+          },
+          config
+        )
+      )
+    end
   end
 }
