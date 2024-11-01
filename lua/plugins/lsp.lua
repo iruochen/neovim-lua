@@ -2,6 +2,8 @@
 return {
   -- 用于配置lsp, 可以在项目lua/lspconfig/configs下看到大量配置文件
   "neovim/nvim-lspconfig",
+  cmd = { "Mason", "Neoconf" },
+  event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     -- 用于安装lsp
     "williamboman/mason.nvim",
@@ -81,10 +83,11 @@ return {
     require("fidget").setup({})
     require("lspsaga").setup()
     require("mason").setup()
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
     require("mason-lspconfig").setup({
       ensure_installed = vim.tbl_keys(servers),
     })
-    local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
     for server, config in pairs(servers) do
       require("lspconfig")[server].setup(
         vim.tbl_deep_extend("keep",

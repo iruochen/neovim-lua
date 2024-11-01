@@ -1,5 +1,6 @@
 return {
   'nvimtools/none-ls.nvim',
+  event = { "BufReadPost", "BufNewFile" },
   dependencies = {
     'jay-babu/mason-null-ls.nvim'
   },
@@ -10,6 +11,9 @@ return {
     require("mason-null-ls").setup({
       ensure_installed = tools,
       handlers = {},
+    })
+    require("null-ls").setup({
+      sources = {}
     })
   end
 }
